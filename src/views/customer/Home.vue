@@ -4,7 +4,7 @@
     <!--Banner Start here -->
     <div class="container-fluid banner-cover py-2 text-center justify-content-center d-flex">
         <div class="title-banner text-white" >
-            <h1 id="title-text" class="mt-5 d-flex justify-content-center">Find YourIdeal Car</h1>
+            <h1 id="title-text" class="mt-5 d-flex justify-content-center">Find Your Ideal Car</h1>
             <p id="tagline">Lets find your ideal car in Bali for rent</p>
             <div class="mt-5 d-flex justify-content-center">
                 <router-link class="nav-link btn btn-info text-light" to="/explore">Explore Vehicles</router-link>
