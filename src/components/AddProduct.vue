@@ -31,7 +31,7 @@
                     <input type="text"  class="form-control" id="email" autocomplete="off" >
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-4">
                     <label for="Price">Price</label>
                     <input type="text"  class="form-control" id="email" autocomplete="off" >
                     </div>
@@ -43,7 +43,7 @@
                                 <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
                             </div>
                             <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Upload</button>
+                                <button class="btn btn-outline-secondary" type="button" style="background-color: #D3E0EA">Upload</button>
                             </div>
                         </div>
                     </div>
