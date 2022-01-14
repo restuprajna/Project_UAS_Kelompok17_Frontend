@@ -206,7 +206,9 @@
 
                 <div class="row mb-2 justify-content-center text-center">
                     <div class="col-8 ">
+                        <router-link to="/paymentsuccess">
                         <button class="btn btn-primary w-50" style="background-color: #1687A7;">Place Order</button>
+                        </router-link>
                     </div>
 
             
@@ -225,10 +227,13 @@
 <script>
 
 import Navbar from '@/components/Navbar.vue'
+
+
 export default {
     name: "Billing",
     components:  {
-        Navbar
+        Navbar,
+        
     }
 }
 </script>

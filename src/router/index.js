@@ -11,6 +11,7 @@ import SignUp from '../components/SignUp.vue'
 import Billing from '../components/Billing.vue'
 import AddProduct from '../components/AddProduct.vue'
 import Footer from '../components/Footer.vue'
+import PaymentSuccess from '../components/PaymentSuccess.vue'
 
 
 
@@ -81,6 +82,12 @@ const routes = [
     path: '/signup',
     name: 'SignUp',
     component: SignUp
+  },
+
+  {
+    path: '/paymentsuccess',
+    name: 'PaymentSuccess',
+    component: PaymentSuccess
   },
   
   {
