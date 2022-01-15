@@ -45,7 +45,7 @@ export default {
         async handleLogin() {
             // ...
             try {
-                await axios.post('http://localhost:8081/api/users/login/', {
+                await axios.get('http://localhost:8081/api/users/login', {
                     email: this.email,
                     password: this.password
                 })

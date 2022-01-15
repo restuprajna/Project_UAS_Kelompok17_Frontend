@@ -13,7 +13,7 @@
                             <th scope="col">Order</th>
                             <th scope="col">Pickup Date</th>
                             <th scope="col">Return Date</th>
-                            <th scope="col">Status</th>
+                            
                             <th scope="col">Total</th>
                             </tr>
                         </thead>
@@ -25,7 +25,7 @@
                             </td>
                             <td>12/12/21</td>
                             <td>21/21/21</td>
-                            <td style="color : red">pending payment</td>
+                            
                             <td>Rp.10.000.000</td>
                             </tr>
 
@@ -36,7 +36,7 @@
                             </td>
                             <td>12/12/21</td>
                             <td>21/21/21</td>
-                            <td style="color : green">payment success</td>
+                           
                             <td>Rp.10.000.000</td>
                             </tr>
                         </tbody>

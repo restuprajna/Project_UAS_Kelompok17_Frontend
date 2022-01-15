@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavbarAdmin/>
+        <Navbar/>
 
         <div class="container pt-4">
             <div class="row justify-content-center pt-5">
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import NavbarAdmin from '@/components/NavbarAdmin.vue'
+import Navbar from '@/components/Navbar.vue'
 export default {
     name : 'Customer',
-    components: { NavbarAdmin }
+    components: { Navbar }
 }
 </script>
 

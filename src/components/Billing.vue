@@ -9,9 +9,9 @@
         <div class="container">
             <h2 class="text-center mb-4">Find Your Location</h2>
 
-        <div class="row mb-3 justify-content-center">
+        <div class="row mb-3 ">
 
-            <div class="col-lg-4 col-md-4 col-sm-6 mt-5 ">
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-5 text-center justify-content-center">
 
                 <div class="dropdown">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,7 +26,7 @@
                 </div>
             </div>           
 
-            <div class="col-lg-4 col-md-4 col-sm-6 mt-5">
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-5 text-center">
                 <form>
                     <div class="m-">
                         <input id="party" type="datetime-local" name="partydate" min="2017-06-01T08:30" max="2017-06-30T16:30" required>
@@ -36,7 +36,7 @@
                 </form>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 mt-5">
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-5 text-center">
                 <form>
                     <div class="m-">
                         <input id="party" type="datetime-local" name="partydate" min="2017-06-01T08:30" max="2017-06-30T16:30" required>
