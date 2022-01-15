@@ -120,9 +120,7 @@
 
 
 
-                    <div class="mb-3">
-                    <button class="btn btn-primary w-100" style="background-color: #B83B5E;">Send</button>
-                    </div>
+                    
                 </form>
         
         </div>
@@ -142,9 +140,7 @@
                     <textarea name="" class="form-control" id="Review" cols="30" rows="10" v-model="review"></textarea>
                     </div>
 
-                    <div class="mb-3">
-                    <button class="btn btn-primary w-100" style="background-color: #B83B5E;">Send</button>
-                    </div>
+                    
                 </form>
             </div>
         </div>

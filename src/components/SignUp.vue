@@ -4,7 +4,7 @@
         <div class="container-fluid pt-5 pb-5 pr-4 pl-4 card mt-5" style="width: 30rem;">
             <form @submit.prevent="handleSignUp">
                 <div class="">
-                    <label for="exampleInputEmail1" class="form-label">Email addresss</label>
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" v-model="email">
                     
                 </div>

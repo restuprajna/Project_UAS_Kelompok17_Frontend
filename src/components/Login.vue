@@ -27,34 +27,63 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import axios from 'axios'
+// import axios from 'axios'
 
+
+// import { Form, Field, ErrorMessage } from "vee-validate";
+import * as yup from "yup";
 
 export default {
-    name: "Login",
-    components:  {
+        name: "Login",
+    components: {
         Navbar
+        // Form,
+        // Field,
+        // ErrorMessage,
     },
     data() {
+        const schema = yup.object().shape({
+        username: yup.string().required("Username is required!"),
+        password: yup.string().required("Password is required!"),
+        });
+
         return {
-            email: '',
-            password: '',
+        loading: false,
+        message: "",
+        schema,
+        };
+    },
+    computed: {
+        loggedIn() {
+        return this.$store.state.auth.status.loggedIn;
+        },
+    },
+    created() {
+        if (this.loggedIn) {
+        this.$router.push("/");
         }
     },
     methods: {
-        async handleLogin() {
-            // ...
-            try {
-                await axios.get('http://localhost:8081/api/users/login', {
-                    email: this.email,
-                    password: this.password
-                })
-            } catch(error) {
-                console.log(error.response.data)
+        handleLogin(user) {
+        this.loading = true;
+
+        this.$store.dispatch("auth/login", user).then(
+            () => {
+            this.$router.push("/");
+            },
+            (error) => {
+            this.loading = false;
+            this.message =
+                (error.response &&
+                error.response.data &&
+                error.response.data.message) ||
+                error.message ||
+                error.toString();
             }
-        }
-    }
-}
+        );
+        },
+    },
+    };
 </script>
 
 <style>
