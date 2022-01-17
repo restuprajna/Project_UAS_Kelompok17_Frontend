@@ -20,6 +20,7 @@
         alt=""
       />
     </div>
+
     <!-- Banner end here -->
 
     <!-- Cart Start here -->
