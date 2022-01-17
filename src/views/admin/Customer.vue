@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavbarAdmin/>
+        
         <h2>ini halaman Customer</h2>
 
         <table class="table table-hover">
@@ -63,10 +63,10 @@
 
 <script>
 
-import NavbarAdmin from '@/components/NavbarAdmin.vue'
+
 export default {
     name : 'Customer',
-    components: { NavbarAdmin }
+   
 }
 </script>
 

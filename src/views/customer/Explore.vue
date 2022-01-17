@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    
 
     <!-- Banner start here -->
 
@@ -79,13 +79,13 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from "@/components/Navbar.vue";
+
 import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Explore",
   components: {
-    Navbar,
+    
     Footer
   },
 };

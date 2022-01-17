@@ -1,6 +1,6 @@
 <template>
     <div>
-        <NavbarAdmin/>
+        
         <h2>ini halaman Order</h2>
 
             <div class="container-table">
@@ -51,10 +51,10 @@
 
 <script>
 
-import NavbarAdmin from '@/components/NavbarAdmin.vue'
+
 export default {
     name : 'Order',
-    components: { NavbarAdmin }
+    
 }
 </script>
 

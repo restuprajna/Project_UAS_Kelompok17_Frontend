@@ -1,7 +1,7 @@
 <template>
   
   <div >
-      <NavbarAdmin/>
+      
 
 
       <!-- sidebar start here -->
@@ -89,14 +89,14 @@
 </template>
 
 <script>
-import NavbarAdmin from '@/components/NavbarAdmin.vue'
+
 
 
 
 
 export default {
     name : 'Dashboard',
-    components: { NavbarAdmin }
+    
     
     // ,
     // data() {

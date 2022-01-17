@@ -1,102 +1,121 @@
 <template>
-    <div>
-        <NavbarAdmin/>
-        <h2>ini halaman Product</h2>
+  <div>
+    <h2>ini halaman Product</h2>
 
-        <div class="container">
-            <div class="row mb-2 justify-content-end">
-                <div class="col-3 align-items-end ">
-                    <router-link type="button" to="/addproduct">
-            
-                    <button type="button" class="btn btn-primary">Add</button>
-
-                    </router-link>
-                </div>
-            </div>
-
-            
-            
-            
+    <div class="container">
+      <div class="row mb-2 justify-content-end">
+        <div class="col-3 align-items-end">
+          <router-link type="button" to="/addproduct">
+            <button type="button" class="btn btn-primary">Add</button>
+          </router-link>
         </div>
-
-        <div class="container-table">
-                <div class="row">
-                    <div class="col-12">
-                        <table class="table table-image">
-                        <thead>
-                            <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Spesifikasi</th>
-                            <th scope="col">Stock</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">1</th>
-                            <td class="w-25">
-                                <img src="../../assets/img/car-3.png" class="img-fluid img-thumbnail" alt="Car">
-                            </td>
-                            <td> 
-                                <br>- Fuel : Pertamax Turbo 
-                                <br>- Heat Type : Automatic
-                                <br>- Vahicle Class : Family Car
-                                <br>- Seats : 4 Person
-                            </td>
-                            <td>1</td>
-                            <td >Rp.30.000.000</td>
-                            <td>
-
-                                <button type="button" class="btn btn-success">Edit</button>
-                                <button type="button" class="btn btn-danger ml-2">Delete</button>
-
-                            </td>
-                            </tr>
-
-                            <tr>
-                            <th scope="row">2</th>
-                            <td class="w-25">
-                                <img src="../../assets/img/car-4.png" class="img-fluid img-thumbnail" alt="Car">
-                            </td>
-                            <td>
-                                <br> - Fuel : Pertamax Turbo 
-                                <br>- Heat Type : Automatic
-                                <br> - Vahicle Class : Sport Car
-                                <br>- Seats : 2 Person 
-                                
-                            </td>
-                            <td>-</td>
-                            <td>Rp.15.000.000</td>
-
-                            <td>
-                                
-                                <button type="button" class="btn btn-success">Edit</button>
-                                <button type="button" class="btn btn-danger ml-2">Delete</button>
-
-
-                            </td>
-                            </tr>
-                        </tbody>
-                        </table>   
-                    </div>
-                </div>
-            </div>
-
+      </div>
     </div>
-    
+
+    <div class="container-table">
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-image">
+            <thead>
+              <tr class="text-center">
+                <th>No</th>
+                <th>Nama</th>
+                <th>Spesifikasi</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                class="text-center"
+                v-for="(product, index) in products"
+                :key="product.id"
+              >
+                <td>{{ index + 1 }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.spesifikasi }}</td>
+                <td>{{ product.stock }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                  <router-link
+                    class="btn btn-primary mr-2"
+                    :to="'/editproduct/' + product.id"
+                  >
+                    EDIT
+                  </router-link>
+                  <router-link
+                    class="btn btn-danger mr-2"
+                    :to="'/delproduct/' + product.id"
+                  >
+                    Delete
+                  </router-link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-
-import NavbarAdmin from '@/components/NavbarAdmin.vue'
+import axios from "axios";
 export default {
-    name : 'Product',
-    components: { NavbarAdmin }
-}
+  name: "Product",
+  data() {
+    return {
+      products: [],
+      // currentUkm : null,
+    };
+  },
+  // created(){
+  //   // this.retrieveUkms();
+  //   // this.refreshListUkm();
+  // },
+
+  methods: {
+    setProducts(data) {
+      this.products = data;
+    },
+    // retrieveUkms() {
+    //   UkmDataService.getAll()
+    //     .then(response => {
+    //       this.ukms = response.data;
+    //       console.log(response.data);
+    //     })
+    //     .catch(e => {
+    //       console.log(e);
+    //     });
+    // },
+    // refreshListUkm() {
+    //   this.retrieveUkms();
+    //   this.currentUkm = null;
+    //   // this.currentIndex = -1;
+    // },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:8080/api/products")
+      .then((response) => this.setProducts(response.data))
+      .catch((error) => console.log(error));
+    // UserService.getAdminBoard().then(
+    //   (response) => {
+    //     this.content = response.data;
+    //   },
+    //   (error) => {
+    //     this.content =
+    //       (error.response &&
+    //         error.response.data &&
+    //         error.response.data.message) ||
+    //       error.message ||
+    //       error.toString();
+    //   }
+    // );
+  },
+};
 </script>
 
 <style>
-
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Navbar />
+    
 
         <!-- Find Location Start here -->
 
@@ -13,16 +13,17 @@
 
             <div class="col-lg-4 col-md-4 col-sm-6 mt-5 text-center justify-content-center">
 
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        Rent Location 
+               <div class="dropdown show">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Your Location
                     </a>
 
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Denpasar Utara</a>
+                        <a class="dropdown-item" href="#">Denpasar Selatan</a>
+                        <a class="dropdown-item" href="#">Denpasar Timur</a>
+                        <a class="dropdown-item" href="#">Denpasar Barat</a>
+                    </div>
                 </div>
             </div>           
 
@@ -177,7 +178,7 @@
                     <div class="form-check col-8 ">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                         <label class="form-check-label" for="flexRadioDefault2">
-                            ONLINE PAYMENT VIA MIDTRANS
+                            ONLINE PAYMENT 
                         </label>
                     </div>
                 </div>
@@ -222,15 +223,12 @@
 
 <script>
 
-import Navbar from '@/components/Navbar.vue'
+
 
 
 export default {
     name: "Billing",
-    components:  {
-        Navbar,
-        
-    }
+  
 }
 </script>
 

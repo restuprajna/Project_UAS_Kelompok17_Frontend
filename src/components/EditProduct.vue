@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        <h2>ini halaman add product</h2>
+        <h2>ini halaman edit product</h2>
 
         <div class="container-fluid py-5 primary-bg-color text-black" id="review">
         
@@ -9,13 +9,13 @@
             
             <div class="container">
             <h2 class="text-center mb-4 ">
-                Add Product
+                Edit Product
             </h2>
             
  
             
             </div>
-                <form class="offset-lg-2 col-lg-8" @submit.prevent="addProduct">
+                <form class="offset-lg-2 col-lg-8" @submit.prevent="editProduct">
                     <div class="mb-3">
                     <label for="nama" class="form-label">Product</label>
                     <input type="text"
@@ -101,7 +101,7 @@
 import axios from "axios";
 
 export default {
-    name: "AddProduct",
+    name: "EditProduct",
      data() {
         return {
         product: {
@@ -115,7 +115,10 @@ export default {
     },
     
     methods: {
-        addProduct() {
+        setProducts(data){
+        this.product = data;
+    },
+        editProduct() {
         const product = {
             id: this.product.id,
             name: this.product.name,
@@ -124,13 +127,20 @@ export default {
             price: this.product.price,
         };
         axios
-            .post("http://localhost:8080/api/products", product)
+            .put(`http://localhost:8080/api/products/${this.$route.params.id}`, product)
             .then((response) => this.$router.push ("/product") (response))
             .catch(function (error) {
             console.log(error);
             });
         },
     },
+
+    mounted(){
+        axios
+            .get(`http://localhost:8080/api/products/${this.$route.params.id}`)
+            .then((response) => this.setProducts(response.data))
+            .catch((error) => console.log(error));
+    }
 }
 </script>
 
