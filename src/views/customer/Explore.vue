@@ -1,7 +1,5 @@
 <template>
   <div>
-    
-
     <!-- Banner start here -->
 
     <div class="container-fluid banner">
@@ -22,7 +20,6 @@
         alt=""
       />
     </div>
-
     <!-- Banner end here -->
 
     <!-- Cart Start here -->
@@ -73,7 +70,7 @@
 
     <!-- Cart end here -->
 
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -85,8 +82,7 @@ import Footer from "@/components/Footer.vue";
 export default {
   name: "Explore",
   components: {
-    
-    Footer
+    Footer,
   },
 };
 </script>
